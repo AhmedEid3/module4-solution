@@ -1,35 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="MenuApp">
   <head>
     <meta charset="utf-8">
-    <title>Restaurant</title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <title>Restaurant Menu</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
   </head>
-  <body ng-app="menuApp">
-    <div class="container">
-      <h1>Welcome</h1>
-      <h2 ng-controller='menuController as menu'>
-        {{menu.allCategories}}
-      </h2>
-    </div>
+  <body class="container">
 
+    <ui-view></ui-view>
 
-    <!-- libraries -->
-    <script src="/lib/angular.min.js" charset="utf-8"></script>
-    <script src="/lib/angular-ui-router.min.js" charset="utf-8"></script>
+    <!-- Libararies -->
+    <script src="lib/angular.min.js" charset="utf-8"></script>
+    <script src="lib/angular-ui-router.min.js" charset="utf-8"></script>
 
     <!-- Modules -->
-    <script src="/src/menuCategories/menuApp.module.js" charset="utf-8"></script>
-    <script src="/src/datacategories/data.module.js" charset="utf-8"></script>
+    <script src="src/MenuApp/menuapp.module.js" charset="utf-8"></script>
+    <script src="src/Data/data.module.js" charset="utf-8"></script>
 
     <!-- Routes -->
+    <script src="src/routes.js" charset="utf-8"></script>
 
-    <!-- module artifacts -->
-    <script src="/src/menuCategories/menuController.controller.js" charset="utf-8"></script>
+    <!-- 'MenuApp' module artifacts -->
+    <script src="src/MenuApp/categories.component.js" charset="utf-8"></script>
+    <script src="src/MenuApp/categories.controller.js" charset="utf-8"></script>
+    <script src="src/MenuApp/items.component.js" charset="utf-8"></script>
+    <script src="src/MenuApp/items.controller.js" charset="utf-8"></script>
 
-    <!-- module artifacts -->
-    <script src="/src/datacategories/menudata.service.js" charset="utf-8"></script>
-
+    <!-- 'Data' module artifacts -->
+    <script src="src/Data/menudata.service.js" charset="utf-8"></script>
 
   </body>
 </html>

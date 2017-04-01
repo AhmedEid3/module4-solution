@@ -1,0 +1,9 @@
+
+<!-- <categories categories="category.allCategories"></categories> -->
+<h2>categories list</h2>
+
+<ul>
+  <li ng-repeat="category in category.allCategories">
+    {{category.name}} ( <a ui-sref='items'>{{category.short_name}}</a> )
+  </li>
+</ul>
