@@ -30,13 +30,14 @@ angular
       }
     })
     .state("items", {
-      url: '/items',
+      url: '/items/{name}',
       templateUrl: 'src/MenuApp/views/items.html',
       controller: 'itemsController as item',
       resolve: {
-        items: ['MenuDataService', function (MenuDataService) {
-          return MenuDataService.getItemsForCategory('L')
+        items: ['MenuDataService', '$stateParams', function (MenuDataService, $stateParams) {
+          return MenuDataService.getItemsForCategory($stateParams.name)
               .then(function (res) {
+                console.log($stateParams.name);
                 console.log(res.data);
                 return res.data;
               });
