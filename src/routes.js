@@ -23,7 +23,6 @@ angular
         AllCategories : ['MenuDataService', function (MenuDataService) {
           return MenuDataService.getAllCategories()
               .then(function (res) {
-                console.log(res.data);
                 return res.data;
               });
         }]
@@ -37,8 +36,6 @@ angular
         items: ['MenuDataService', '$stateParams', function (MenuDataService, $stateParams) {
           return MenuDataService.getItemsForCategory($stateParams.name)
               .then(function (res) {
-                console.log($stateParams.name);
-                console.log(res.data);
                 return res.data;
               });
         }]
